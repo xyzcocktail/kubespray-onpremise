@@ -1,46 +1,45 @@
 nodes:
-  - name: kubespray-node-1
+  - name: kube-node-1
     box: generic/ubuntu1804
-    hostname: kubespray-node-1
+    hostname: kube-node-1
     ip: 192.168.25.201
     port: 2201
     memory: 4096
     cpu: 4
-  - name: kubespray-node-2
+  - name: kube-node-2
     box: generic/ubuntu1804
-    hostname: kubespray-node-2
+    hostname: kube-node-2
     ip: 192.168.25.202
     port: 2202
     memory: 4096
     cpu: 4
-  - name: kubespray-node-3
+  - name: kube-node-3
     box: generic/ubuntu1804
-    hostname: kubespray-node-3
+    hostname: kube-node-3
     ip: 192.168.25.203
     port: 2203
     memory: 4096
     cpu: 4
-  - name: kubespray-node-4
+  - name: kube-node-4
     box: generic/ubuntu1804
-    hostname: kubespray-node-4
+    hostname: kube-node-4
     ip: 192.168.25.204
     port: 2204
     memory: 4096
     cpu: 4
-  
-  - name: kubespray-node-5
+  - name: kube-node-5
     box: generic/ubuntu1804
-    hostname: kubespray-node-5
+    hostname: kube-node-5
     ip: 192.168.25.205
     port: 2205
     memory: 4096
     cpu: 4
   
-# bootstrap:
-#   - name: kubespray-bootstrap
-#     box: generic/ubuntu1804
-#     hostname: kubespray-bootstrap
-#     ip: 192.168.1.200
-#     port: 2222
-#     memory: 2048
-#     cpu: 2
+bootstrap:
+  - name: kubespray-bootstrap
+    box: generic/ubuntu1804
+    hostname: kubespray-bootstrap
+    ip: 192.168.1.200
+    port: 2222
+    memory: 2048
+    cpu: 2
