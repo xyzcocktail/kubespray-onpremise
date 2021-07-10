@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
   CONFIG['nodes'].each do |node|
     config.vm.define node['name'] do |cfg|
       cfg.vm.box = node['box']
-      cfg.vm.network "public_network", host: node['port'], ip: node['ip']
+      cfg.vm.network "public_network", :forwarded_port, id: "ssh" guest: 22, host: node['port'], ip: node['ip']
       cfg.vm.hostname = node['hostname']
       
       cfg.vm.provider "virtualbox" do |v|
@@ -33,6 +33,14 @@ Vagrant.configure("2") do |config|
         systemctl enable chrony
         systemctl restart chrony
         timedatectl set-ntp true
+      SCRIPT
+
+      # common configuration for kubernetes 
+      cfg.vm.provision "shell", inline: <<-SCRIPT
+        sudo swapoff -a
+        sudo sed -i '/swap/d' /etc/fstab
+        sudo systemctl stop ufw
+        sudo systemctl disable ufw
       SCRIPT
     end
   end
