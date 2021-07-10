@@ -1,3 +1,11 @@
+bootstrap:
+  - name: kubespray-bootstrap
+    box: generic/ubuntu1804
+    hostname: kubespray-bootstrap
+    ip: 192.168.1.200
+    memory: 2048
+    cpu: 2
+
 nodes:
   - name: kube-node-1
     box: generic/ubuntu1804
@@ -35,11 +43,3 @@ nodes:
     memory: 4096
     cpu: 4
   
-bootstrap:
-  - name: kubespray-bootstrap
-    box: generic/ubuntu1804
-    hostname: kubespray-bootstrap
-    ip: 192.168.1.200
-    port: 2222
-    memory: 2048
-    cpu: 2
