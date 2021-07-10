@@ -6,7 +6,7 @@ CONFIG = YAML.load_file(File.join(File.dirname(__FILE__), 'config.yml'))
 Vagrant.configure("2") do |config|
   config.ssh.insert_key = false
 
-  bootstrap-server
+  # bootstrap-server
   CONFIG['bootstrap'].each do |bootstrap|
     config.vm.define bootstrap['name'] do |cfg|
       cfg.vm.box = bootstrap['box']
