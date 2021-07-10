@@ -34,6 +34,9 @@ Vagrant.configure("2") do |config|
         systemctl enable chrony
         systemctl restart chrony
         timedatectl set-ntp true
+        echo "***** ***** *****"
+        echo "DONE"
+        echo "***** ***** *****"
       SCRIPT
     end
   end
@@ -66,14 +69,9 @@ Vagrant.configure("2") do |config|
         systemctl enable chrony
         systemctl restart chrony
         timedatectl set-ntp true
-      SCRIPT
-
-      # common configuration for kubernetes 
-      cfg.vm.provision "shell", inline: <<-SCRIPT
-        sudo swapoff -a
-        sudo sed -i '/swap/d' /etc/fstab
-        sudo systemctl stop ufw
-        sudo systemctl disable ufw
+        echo "***** ***** *****"
+        echo "DONE"
+        echo "***** ***** *****"
       SCRIPT
     end
   end
