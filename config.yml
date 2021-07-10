@@ -1,35 +1,38 @@
-controlplanes:
-  - name: kubespray-controlpalne-1
+nodes:
+  - name: kubespray-node-1
     box: generic/ubuntu1804
-    hostname: kubespray-controlpalne-1
-    ip: 192.168.1.201
+    hostname: kubespray-node-1
+    ip: 192.168.25.201
+    port: 2201
     memory: 4096
     cpu: 4
-  - name: kubespray-controlpalne-2
+  - name: kubespray-node-2
     box: generic/ubuntu1804
-    hostname: kubespray-controlpalne-2
-    ip: 192.168.1.202
+    hostname: kubespray-node-2
+    ip: 192.168.25.202
+    port: 2202
     memory: 4096
     cpu: 4
-  - name: kubespray-controlpalne-3
+  - name: kubespray-node-3
     box: generic/ubuntu1804
-    hostname: kubespray-controlpalne-3
-    ip: 192.168.1.203
+    hostname: kubespray-node-3
+    ip: 192.168.25.203
+    port: 2203
+    memory: 4096
+    cpu: 4
+  - name: kubespray-node-4
+    box: generic/ubuntu1804
+    hostname: kubespray-node-4
+    ip: 192.168.25.204
+    port: 2204
     memory: 4096
     cpu: 4
   
-workers:  
-  - name: kubespray-worker-1
+  - name: kubespray-node-5
     box: generic/ubuntu1804
-    hostname: kubespray-worker-1
-    ip: 192.168.1.204
-    memory: 4096
-    cpu: 4
-  
-  - name: kubespray-worker-2
-    box: generic/ubuntu1804
-    hostname: kubespray-worker-2
-    ip: 192.168.1.205
+    hostname: kubespray-node-5
+    ip: 192.168.25.205
+    port: 2205
     memory: 4096
     cpu: 4
   
@@ -38,5 +41,6 @@ bootstrap:
     box: generic/ubuntu1804
     hostname: kubespray-bootstrap
     ip: 192.168.1.200
+    port: 2222
     memory: 2048
     cpu: 2
