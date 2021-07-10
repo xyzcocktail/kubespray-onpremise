@@ -11,7 +11,7 @@ Vagrant.configure("2") do |config|
     config.vm.define bootstrap['name'] do |cfg|
       cfg.vm.box = bootstrap['box']
       cfg.vm.hostname = bootstrap['hostname']
-      cfg.vm.network "public_network", bridge: "enp7s0f0" ip: bootstrap['ip']
+      cfg.vm.network "public_network", bridge: "enp7s0f0", ip: bootstrap['ip']
   
       cfg.vm.provider "virtualbox" do |v|
         v.memory = bootstrap['memory']
@@ -42,7 +42,7 @@ Vagrant.configure("2") do |config|
   CONFIG['nodes'].each do |node|
     config.vm.define node['name'] do |cfg|
       cfg.vm.box = node['box']
-      cfg.vm.network "public_network", bridge: "enp7s0f0" ip: node['ip']
+      cfg.vm.network "public_network", bridge: "enp7s0f0", ip: node['ip']
       cfg.vm.hostname = node['hostname']
       
       cfg.vm.provider "virtualbox" do |v|
